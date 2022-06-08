@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fl#_9#&s=07ieq5xqk84+m%i&h2)47g5bo@w%1$30gjh-56cb='
 # SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['localhost']
 ALLOWED_HOSTS = ['epatha-web-application-01.herokuapp.com','localhost']
