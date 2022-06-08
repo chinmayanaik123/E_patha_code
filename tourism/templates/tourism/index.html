@@ -1,0 +1,40 @@
+{% extends 'e_patha/basic.html' %}
+{% block body %}
+<div class="c" style="padding:10px">
+    <title>Tourisam</title>
+    <style>
+        .c{
+          width:100%;
+          min-width:1200px;
+          height:auto; 
+        }
+      </style>
+<div class="row my-2 c">
+    {% for item in myposts %}
+
+        <div class="col-md-3">
+            <div
+                class="row no-gutters border rounded overflow-hidden flex-md-row mb-3 shadow-sm h-md-100 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">{{item.place}}</strong>
+                    <h3 class="mb-0">{{item.Place_name}}</h3>
+                    <div class="mb-1 text-muted"></div>
+                    <p class="card-text mb-auto">{{item.informations}}</p>
+                    <a href="blogpost/{{item.post_id}}" class="stretched-link">Know more </a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img src="/media/{{item.Images}}" class="bd-placeholder-img"  height="250"
+                        aria-label="Placeholder: Thumbnail"/>
+
+                </div>
+            </div>
+        </div>
+{% if forloop.counter|divisibleby:4 %}
+    </div><div class="row my-4">
+    {% endif %}
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

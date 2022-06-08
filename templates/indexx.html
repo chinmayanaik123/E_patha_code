@@ -1,0 +1,164 @@
+{% extends 'base1.html' %}
+
+{% block title%}Contacts List{% endblock %}
+
+{% block header1 %}
+<style>
+
+	body{
+		font-family: 'Inter', sans-serif;
+		margin: 0;
+	}
+	
+	.container{
+		max-width:1000 px;
+		margin: 0 auto;
+		background-color: #000000;
+		min-height: 100vh;
+	
+	   
+	}
+	
+	a{
+		text-decoration: none;
+	}
+	
+	.header{
+		display: flex;
+		justify-content: space-evenly;
+		color: #fff;
+		background: linear-gradient(90deg, rgb(181, 116, 251) 0%, rgb(128, 233, 238) 100%);
+		padding: 2em 0;
+		align-items: center;
+	}
+	
+	.contact-search{
+		font-size: 1.2em;
+		padding:.3em .3em;
+		border-radius: 100px;
+		border:1px solid white;
+		outline: none;
+	}
+	
+	
+	.contacts-library{
+		background: #778899
+	}
+	
+	.add{
+		color: #fff;
+		font-size: 1.5em;
+	}
+	
+	i{
+		color: #fff;
+		font-size: 1.5em;
+	}
+	
+	.contact-name{
+		color: #fff;
+		font-size: 1.2em;
+	}
+	
+	
+	ul{
+		margin: 0;
+		padding: 0;
+		
+	}
+	
+	hr{
+		border: 1px solicontactd #494a4b;
+	}
+	
+	.list__item{
+		list-style: none;
+	}
+	
+	.occupation{
+		color: #fff;
+		width: 6em;
+		text-align: center;
+		padding: .4em .5em;
+		border-radius: 100px;
+		border-top-left-radius: 0;
+		background-color: #75A85E;
+	}
+	
+	
+	.contact-section{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 1.0em;
+		transition: 0.3s;
+	}
+	
+	.contact-section:hover{
+		background-color: #00000097;
+	}
+	
+	.text{
+		padding-left: 1em;
+	}
+</style>
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/6b20b1c14d.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+
+{% block body1 %}
+
+<div class="abc" style="background-color:rgb(255 233 198 / 71%);">
+	<div class="container" style="max-width:1100px;">
+
+		<header class="header">
+			<form action="/" method="GET" class="search-bar" id='search-form'>
+
+				<input type="search-name" class="contact-search" name="search-area" placeholder="Search"
+					value={{search_input}}>
+
+				<i onclick="document.getElementById('search-form').submit();" style="padding-left: 5px;"
+					class="fas fa-search"></i>
+
+			</form>
+			<a href="{% url 'add-contact'  %}"><i class="fas fa-plus-circle add"></i></a>
+		</header>
+
+		<section class="contacts-library">
+			<ul class="contacts-list">
+				{% for contact in contacts reversed %}
+
+				<a href="{% url 'profile' contact.id %}" style="text-decoration: none;">
+
+					<div class="contact-section">
+						<li class="list__item">
+
+
+							<p class="contact-name" style="font-size:20px;"><b>{{ contact.full_name | title }}</b></p>
+
+							<p class="occupation" style="color:rgb(249, 249, 249);">{{ contact.occupation | title }}</p>
+						</li>
+
+						<li id="call" class="list__item">
+							<i class="fas fa-phone"></i>
+							<i class="fas fa-sms text"></i>
+						</li>
+					</div>
+				</a>
+
+				<hr>
+
+
+				{% empty %}
+				<h3 style="color:rgb(240, 8, 8);padding:0px;">No contacts found..</h3>
+
+				{% endfor %}
+			</ul>
+		</section>
+	</div>
+</div>
+
+{% endblock %}

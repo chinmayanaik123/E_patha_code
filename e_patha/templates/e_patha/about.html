@@ -1,0 +1,57 @@
+{% extends 'e_patha/basic.html' %}
+
+{% block title%} About Us{% endblock %}
+{% block body %}
+
+<div class="container" style="background-color: black; padding: 50px; margin-top: 30px;">
+
+ <!-----about us content---->
+ <section class="about-us" style="width: 80%;
+ margin:auto;
+ padding-top:20px;
+ padding-bottom:5px;
+ color:antiquewhite;">
+  <div class="row1">
+      <div class="about-col" style=" flex-basis: 48%;
+      padding: 30px 2px;">
+          <h1>E-Patha</h1>
+          <p>According to recent studies 46% of all Google searches are made with the intent of finding local information.
+              Every village or city has its own special places most of the people are unaware of. 
+              In order to give a proper awareness, we develop a web application to display and gather local information of every village and city. 
+              The application gives the details for the users about the bus timings, local shop details, auto / cab driver contact details, temple ,tourist places details and exact local weather details especially for the farmers. 
+              Localites or the visitors can get all of this information in one website.</p>
+             <div class="cen" style="padding-left: 350px;" style="color:cyan;">
+              <button><a href="{% url 'index1'%}">EXPLORE NOW</a></button>
+             </div>
+              
+          
+      </div>
+    
+  </div>
+</section>
+
+<!--footer-->
+<section class="footer" style="width:100%;
+text-align: center;
+padding:5px 0;
+color: blanchedalmond;">
+  <h4>A Common Man's Local Guide</h4>
+   <p>Providing free service and creating a digital awareness among the people<br>
+  Supporting the economic development of your region through all meaans possible</p>
+  <div class="icons">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+      <i class="fa fa-facebook-square"></i>
+      <i class="fa fa-twitter-square"></i>
+      <i class="fa fa-instagram"></i>
+      <i class="fa fa-linkedin-square"></i>
+  </div>
+</section>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

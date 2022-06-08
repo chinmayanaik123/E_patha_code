@@ -1,0 +1,21 @@
+{% extends 'e_patha/index1.html' %}
+
+{% block navi%}
+
+
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="text-center" style="background-color: powderblue;  float: right;" >
+        
+        <p>Hello {{ user.first_name }}!</p>
+        <p>Your Username : {{ user }}</p>
+        <a class="btn btn-dark" href="{% url 'socialaccount_connections' %}">Settings</a>
+    </div>
+
+
+    
+{% endblock %}

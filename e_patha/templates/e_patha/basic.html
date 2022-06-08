@@ -1,0 +1,95 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> 
+    <title>{% block title%} {% endblock %}</title>
+    {% block map %} {% endblock %}
+  </head>
+  <body>
+    <div class="desktop">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #000000ba!important;">
+        <a class="navbar-brand" href="/e_patha" style="padding-top:.325rem;padding-bottom:.325rem">
+          <img src="{% static 'logoo.jpeg' %}" width="125" height="50" alt="E-Patha">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav  mr-auto">
+      
+      <li class="nav-item active">
+        <a class="nav-link" href="/e_patha/index1">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/e_patha/weather">Weather</a>
+      </li>
+  
+      <li class="nav-item">
+        <a class="nav-link" href="/e_patha/map">Map</a>
+      </li>
+
+     
+      <li class="nav-item">
+        <a class="nav-link" href="/e_patha/about">About Us</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/e_patha/Contact_us_">Contact Us</a>
+      </li>
+   
+      {% block navi%} {% endblock %}
+
+    </ul>
+    <!-- <form method='get' action='/e_patha/search/' class="form-inline my-2 my-lg-0 " style="padding-left: 20px;">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+
+    {% if user.is_authenticated %}
+   
+    <ul class="nav " style=" padding-left: 20px;"><a href=""style="color: aliceblue;text-decoration: none;">Welcome {{ user }}</a>
+    </ul>
+    <ul class="nav " style=" padding-left: 20px;"><a href="{% url 'account_logout' %}"style="color: aliceblue;text-decoration: none;">Sign Out</a>
+    </ul>
+    <ul class="nav " style=" padding-left: 20px;"><a href="{% url 'account_email' %}"style="color: aliceblue;text-decoration: none;">Change E-mail</a>
+    </ul>
+
+  
+  
+    {% else %}
+    <ul class="nav " style=" padding-left: 20px;"><a href="{% url 'account_login' %}"style="color: aliceblue;text-decoration: none;">Sign In</a>
+    </ul>
+    <ul class="nav " style=" padding-left: 20px;"><a href="{% url 'account_signup' %}"style="color: aliceblue;text-decoration: none;">Sign Up</a>
+    </ul>
+    {% endif %}
+
+  </div> 
+</nav>
+
+<style>
+  .desktop{
+    width:100%;
+    min-width:930px;
+    height:auto; 
+  }
+</style>
+
+
+  {% block body %} {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    {% block js %} {% endblock %}
+  </div>
+  </body>
+</html>
