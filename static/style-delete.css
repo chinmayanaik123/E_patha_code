@@ -10,7 +10,7 @@ body{
 .container{
 	max-width:1000 px;
 	margin: 0 auto;
-	background-color: #123c92;
+	background-color: #3a5ca0;
 	min-height: 100vh;
 }
 
@@ -68,8 +68,8 @@ p{
 	align-items: center;
 	padding: 1em 2em;
 	border-radius: 20px;
-	box-shadow:  6px 6px 12px #2d2f33, 
-             -6px -6px 12px #35393d;
+	box-shadow:  6px 6px 12px #46484e, 
+             -6px -6px 12px #51565b;
 }
 
 .delete-button{
