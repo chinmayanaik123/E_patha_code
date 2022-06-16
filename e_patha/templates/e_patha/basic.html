@@ -42,14 +42,25 @@
        <li class="nav-item">
         <a class="nav-link" href="/e_patha/Contact_us_">Contact Us</a>
       </li>
-   
+      <li class="nav-item">
+        <a class="nav-link" href="/admin">Edit Info.</a>
+      </li>
+      <li></li>
+      <div class="c" style=" padding-top: 1%;">
+      <form action="#">
+        <label class="ab" for="place">Location:</label>
+        <select name="place" id="cars">
+          <option value="Mangalore">Mangalore</option>
+          <option value="Surathkal">Surathkal</option>
+          <option value="Puttur">Puttur</option>
+          <option value="Bantwal">Bantwal</option>
+        </select>
+      </form>
+    </div>
       {% block navi%} {% endblock %}
 
     </ul>
-    <!-- <form method='get' action='/e_patha/search/' class="form-inline my-2 my-lg-0 " style="padding-left: 20px;">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search" id="search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
+
 
     {% if user.is_authenticated %}
    
@@ -78,7 +89,15 @@
     min-width:1250px;
     height:auto; 
   }
-
+   .ab{ color: #a5b3c0eb;
+   
+  
+}
+input, textarea, select {
+  background-color : rgb(101, 101, 101);
+  color : #fff;
+  }
+  
   @media screen and (max-width: 768px) {
     .row-offcanvas {
       position: relative;
