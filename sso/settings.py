@@ -10,7 +10,7 @@ CSRF_TRUSTED_ORIGINS=['https://epatha-web-application-01.herokuapp.com']
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fl#_9#&s=07ieq5xqk84+m%i&h2)47g5bo@w%1$30gjh-56cb='
+SECRET_KEY = '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'
 # SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,7 +47,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -75,7 +75,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sso.wsgi.application'
 
-
+# DATABASE_NAME = 'C:/Users/chinm/Documents/desktoop/E_patha_code/db.sqlite3'       try search about this
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -137,7 +137,7 @@ AUTHENTICATION_BACKENDS = [
 'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 
 # 484826505506-9jpbrio7lk96vivmq70pujjh7eq53e41.apps.googleusercontent.com
 # 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
